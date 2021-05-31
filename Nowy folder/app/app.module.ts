@@ -1,6 +1,6 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -10,23 +10,22 @@ import { ProductsComponent } from './components/products/products.component';
 import { PanelTopComponent } from './components/panel-top/panel-top.component';
 
 const appRoutes: Routes = [
-  { path: 'products', component: ProductsComponent },
   { path: 'landing', component: LandingComponent },
+  { path: 'products', component: ProductsComponent },
   { path: '', redirectTo: '/landing', pathMatch: 'full' }
-];
+ ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    LandingComponent,
     ProductsComponent,
+    LandingComponent,
     PanelTopComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
