@@ -1,18 +1,40 @@
 <div>
-    <div style="display: flex;flex-direction: row;">
-        <img src="https://via.placeholder.com/100" routerLink="/landing" alt="">
-        <h2>Sklep z softłerem</h2>
+    <div class="top_bar">
+        <img src=".\assets\images\Logo.png" routerLink="/landing" alt="shop-logo">
+        <div>
+          <nav class="navigation_menu">
+              <a routerLink="/landing" class="navigation_link">
+                  <p>Kategorie</p>
+              </a>
+              <a routerLink="/landing" class="navigation_link">
+                  <p>Poradniki</p>
+              </a>
+              <a routerLink="/landing" class="navigation_link">
+                  <p>Twoje Listy</p>
+              </a>
+              <a routerLink="/landing" class="navigation_link">
+                  <p>O nas</p>
+              </a>
+              <a routerLink="/landing" class="navigation_link">
+                  <p>Kontakt</p>
+              </a>
+          </nav>
+      </div>
+        <div class="cart-button">
+          <p>Koszyk:</p>
+          <button id="cartBtn" routerLink="/cart">
+              {{getCartQuanity()}}
+          </button>
+      </div>
     </div>
 
-    <button routerLink="/adm_dashboard">Panel Administratora</button>
+
 
     <div style="display: flex; justify-content: center;">
         <input type="text" [(ngModel)]="this.mainService.productsRequest.name">
         <button (click)="this.mainService.getProducts(this.mainService.productsRequest)" routerLink="/products">Szukaj Produktu</button>
     </div>
-    <div>
-        <button id="cartBtn" routerLink="/cart">
-            {{getCartQuanity()}}
-        </button>
-    </div>
+
+    <button routerLink="/adm_dashboard">Panel Administratora</button>
+
 </div>
